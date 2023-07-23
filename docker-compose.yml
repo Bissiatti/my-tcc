@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  torch7:
+    build: ./
+    runtime: nvidia
+    volumes:
+      - $PWD/ComputeCache:/root/.nv/ComputeCache
+      - ./code:/code:z
+    stdin_open: true
+    stdout_open: true
+    #tty: true
+    #interactive: true
+    #attachable: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
