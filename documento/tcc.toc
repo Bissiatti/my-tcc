@@ -5,9 +5,11 @@
 \contentsline {subsubsection}{\numberline {2.1.1}yy}{5}{subsubsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.2}xx}{6}{subsection.2.2}%
 \contentsline {section}{\numberline {3}Metodologia}{7}{section.3}%
-\contentsline {subsection}{\numberline {3.1}xx}{7}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}yy}{9}{subsubsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.2}xx}{9}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Resultados Esperados}{10}{section.4}%
-\contentsline {subsection}{\numberline {4.1}xx}{10}{subsection.4.1}%
-\contentsline {section}{\numberline {5}Referências}{11}{section.5}%
+\contentsline {section}{\numberline {4}Detecção de arestas}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Algoritmos clássicos}{8}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Detecção de restas}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Transformada de Hough}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Detecção de seguimentos}{9}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Aprimoramento}{9}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Classifcação de seguimentos}{9}{section.6}%
+\contentsline {section}{\numberline {7}Referências}{10}{section.7}%

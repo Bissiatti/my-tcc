@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1692024911 "c:/Users/emanu/OneDrive/Documentos/fgv/tcc/my-tcc/tcc.tex" "tcc.pdf" "tcc" 1692024914 0
-  "c:/Users/emanu/OneDrive/Documentos/fgv/tcc/my-tcc/tcc.tex" 1690170938 5490 c53d5b2fc76a784ee1c5da247e161be8 ""
+["pdflatex"] 1698252804 "c:/Users/emanu/OneDrive/Documentos/fgv/tcc/my-tcc/documento/tcc.tex" "tcc.pdf" "tcc" 1698252807 0
+  "c:/Users/emanu/OneDrive/Documentos/fgv/tcc/my-tcc/documento/tcc.tex" 1698252772 9975 1cc522330c160b2676313f9d6162779c ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1691935454 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1691933485 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1691933485 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -24,12 +24,10 @@
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1691934322 1120 8b7d695260f3cff42e636090a8002094 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1691933485 32080 340ef9bf63678554ee606688e7b5339d ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1691933485 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1691933485 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1691933485 35752 024fb6c41858982481f6968b5fc26508 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1691933485 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1691933485 32762 7fee39e011c23b3589931effd97b9702 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1691933485 32726 39f0f9e62e84beb801509898a605dbd5 ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1691933485 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1691937017 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "c:/texlive/2023/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1691933615 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "c:/texlive/2023/texmf-dist/tex/generic/babel-portuges/brazil.ldf" 1691933700 6591 308dec8ccec5a8d302be8a046d473dd3 ""
@@ -103,10 +101,11 @@
   "c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1691941124 4687025 676c7d7298543c4303eabe86c426c675 ""
   "c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1691941250 8172982 cef865e58008af16e30388eeefcbc315 ""
   "c:/texlive/2023/texmf.cnf" 1691941086 713 e69b156964470283e0530f5060668171 ""
-  "tcc.aux" 1692024913 1994 53b70e9b5307fb36f31e3f555fff680e "pdflatex"
-  "tcc.out" 1692024913 1298 399dbb911c0f52d7eb42886da7d4e9e7 "pdflatex"
-  "tcc.tex" 1690170938 5490 c53d5b2fc76a784ee1c5da247e161be8 ""
-  "tcc.toc" 1692024913 877 c1b63e3f0ef485bbc993c65b09fe9d14 "pdflatex"
+  "sobel.png" 1698194133 787454 02d7e4a9086ba107fc53ca7d44dc5ebf ""
+  "tcc.aux" 1698252807 2370 52091cbe988dfe68692e968e2bbcdda7 "pdflatex"
+  "tcc.out" 1698252807 2014 c66f84f866aa614026b948821590dda4 "pdflatex"
+  "tcc.tex" 1698252772 9975 1cc522330c160b2676313f9d6162779c ""
+  "tcc.toc" 1698252807 1099 e4622409aa14b680432660cb4c808b21 "pdflatex"
   (generated)
   "tcc.aux"
   "tcc.log"

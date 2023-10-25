@@ -10,6 +10,8 @@
 \usepackage{pdfpages}
 
 \usepackage[brazil]{babel}
+% \usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
 %\usepackage{pstricks}%, egameps}
 
 %\setlength{\textwidth}{17.2cm}
@@ -175,81 +177,128 @@ xx
 \newpage
 \section{Metodologia}
 
-metodologia...
+O problema de dado uma imagem, classificar os seguimentos de reta de acordo com o respectivo ponto de fuga que passa por essa aresta. Para resolver isso, o problema foi subdividido em três etapas:
 
-\subsection{xx}
+\begin{enumerate}
+\item Detecção de arestas
+\item Detecção de retas
+\item Classificação de seguimentos
+\end{enumerate}
 
-xx
+Cada etapa prosterior depende da etapa anterior, sendo assim, a saída da etapa $i$ é a entrada da etapa $i+1$. A seguir, cada etapa será detalhada.
 
-\newpage
+\section{Detecção de arestas}
+
+A detecção de arestas é um problema clássico de processamento de imagens, onde o objetivo é identificar os limites de objetos contidos em uma imagem. Em especial, esse trabalho busca identificar as arestas que delimitam as faces de edifícios, que em geral são linhas retas. 
+
+\subsection{Algoritmos clássicos}
+
+% Os algoritmos clássicos de detecção de arestas são baseados em filtros convulocionais em uma imagem que identificam mudanças bruscas de intensidade. Observe que a imagem de uma aresta é uma região onde a intensidade da imagem muda bruscamente, sendo assim, os algoritmos de detecção de arestas são baseados em filtros que identificam essas mudanças de intensidade por meio de derivadas da intensidade da imagem. A figura \ref{fig:sobel}, mostra a fotografia do edifício da biblioteca nacional e o resultado da aplicação do algoritmo de Sobel e do algoritmo de Canny.
+
 \begin{figure}[H]
 \centering
-%left bottom right top
-%\includegraphics[trim=10mm 00mm 00mm 00mm, scale=0.40]{tabela.pdf}
+\includegraphics[scale=0.70]{sobel.png}
+\label{fig:sobel}
 \begin{center}
-Figura 1: tabela.
+Figura 1: Imagem original e resultado do algoritmo de Sobel.
 \end{center}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-%left bottom right top
-%\includegraphics[trim=10mm 00mm 00mm 00mm, scale=0.40]{tabela.pdf}
-\begin{center}
-Figura 2: tabela.
-\end{center}
-\end{figure}
+O algoritmo de Sobel é um filtro convulocional que calcula a magnitude do gradiente da intensidade da imagem. O algoritmo de Canny é um algoritmo mais sofisticado que utiliza o algoritmo de Sobel para calcular a magnitude do gradiente da intensidade da imagem e aplica uma série de filtros para remover ruídos e destacar as arestas da imagem. Em geral o algoritmo de Canny apresenta melhores resultados que o algoritmo de Sobel, porém, o algoritmo de Canny é mais custoso computacionalmente, apesar disso, o custo computacional não é está sendo considerado nesse trabalho.
 
-\newpage
-\subsubsection{yy}
+Em análise, ambos os algoritmos não apresentam resultados satisfatórios para essa aplicação. O algoritmo de Sobel apresenta muitos ruídos e o algoritmo de Canny apresenta muitas arestas que não são relevantes para a aplicação. A aplicação busca encontrar as arestas que delimitam as faces de edifícios, entretanto, esses algoritmos detectam todas as arestas da imagem, incluindo as que compõem a textura da parede dos edifícios e as janelas. 
 
-yy
+% Uma abordagem para resolver esse problema seria utilizar um desses algoritmos e depois aplcar um algoritmo que seleciona o subconjunto de arestas ótimas para a aplicação, ou seja, do conjunto de arestas dado pelos algoritmos, selecionar apenas aquelas delimitam os prédios por meio de aprendizado de máquina. Entretanto, essa abordagem não é eficiente, pois, o algoritmo de aprendizado de máquina precisa de um conjunto de treinamento para aprender a selecionar as arestas ótimas, e para obter esse conjunto de treinamento é necessário selecionar manualmente as arestas ótimas. Existem alguns conjunos de que já foram selecionados manualmente, como o banco de dados \cite[Nyu Dataset]{nyu_depth_v2}
+\section{Detecção de restas}
 
-% \[\left\{ 
-\begin{align*}
-f_{i}(x) = (10x + 100), \qquad \text{(1)} \tag{1}\\
-f_{ii}(x) = (20x + 200), \qquad \text{(2)} \tag{2} \\
-f_{iii}(x) = (30x + 300), \qquad \text{(3)} \tag{3} \\
-\end{align*} %\right.\]
+O retorno da etapa anterior é uma imagem segmentada, onde os objetos que compõem a imagem original estão destacados enquanto as outras frêquencias da imagem não apresenta informação relevante. Sendo assim, nessa etapa são utilizados algoritmos tradicionais de computação gráfica
+para determinar as equações das retas que passam pelos seguimentos da imagem:
 
-xx
+\subsection{Transformada de Hough}
 
-\begin{align*}
-Vm_{i}(p,l) = ((-1.9141)p + 49.466)l + ((199.51)p - 10795.0), \text {$l$=0} \tag{4}
-\end{align*}
+A transformada de Hough é uma técnica que permite a detecção de formas geométricas em uma imagem. A técnica foi desenvolvida por Paul Hough em 1962, 
 
-\begin{align*}
-f_{n}(y) = \frac{y}{1000}, \tag{5}
-\end{align*}
+\subsection{Detecção de seguimentos}
 
-\subsection{xx}
 
-xx
+\subsection{Aprimoramento}
 
-%\[\left\{
-\begin{align*} 
-Funcao_{i}(p) = \gamma + \delta p + \theta p^2 + \omega p^3, \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \text{(6)} \tag{6} \\
-\end{align*} %\right.\]
+Observa-se que há muito ruído em alguns traços dos objetos selecionados pelo modelo de aprendizado de máquina, para evitar isso, 
 
-\newpage
-\section{Resultados Esperados}
 
-Nesta seção serão apresentados os resultados esperados...
+\section{Classifcação de seguimentos}
 
-\subsection{xx}
+A saída da etapa anterior $S$ contém o conjunto de pontos que descrevem os limites de seguimentos de retas contidos na imagem
+Assim, o 
 
-xx
+
+% \centering
+% %left bottom right top
+% %\includegraphics[trim=10mm 00mm 00mm 00mm, scale=0.40]{tabela.pdf}
+% \begin{center}
+% Figura 1: tabela.
+% \end{center}
+
+% \begin{figure}[H]
+% \centering
+% %left bottom right top
+% %\includegraphics[trim=10mm 00mm 00mm 00mm, scale=0.40]{tabela.pdf}
+% \begin{center}
+% Figura 2: tabela.
+% \end{center}
+% \end{figure}
+
+% \newpage
+% \subsubsection{yy}
+
+% yy
+
+% % \[\left\{ 
+% \begin{align*}
+% f_{i}(x) = (10x + 100), \qquad \text{(1)} \tag{1}\\
+% f_{ii}(x) = (20x + 200), \qquad \text{(2)} \tag{2} \\
+% f_{iii}(x) = (30x + 300), \qquad \text{(3)} \tag{3} \\
+% \end{align*} %\right.\]
+
+% xx
+
+% \begin{align*}
+% Vm_{i}(p,l) = ((-1.9141)p + 49.466)l + ((199.51)p - 10795.0), \text {$l$=0} \tag{4}
+% \end{align*}
+
+% \begin{align*}
+% f_{n}(y) = \frac{y}{1000}, \tag{5}
+% \end{align*}
+
+% \subsection{xx}
+
+% xx
+
+% %\[\left\{
+% \begin{align*} 
+% Funcao_{i}(p) = \gamma + \delta p + \theta p^2 + \omega p^3, \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \text{(6)} \tag{6} \\
+% \end{align*} %\right.\]
+
+% \newpage
+% \section{Resultados Esperados}
+
+% Nesta seção serão apresentados os resultados esperados...
+
+% \subsection{xx}
+
+% xx
 
 \newpage
 \section{Referências}
 
-[1] a.
+% [1] a.
 
-\noindent [2] b.
+% \noindent [2] b.
 
-\noindent [3] c.
+% \noindent [3] c.
 
-\noindent [4] d.
+% \noindent [4] d.
 
+% \bibliography{refs} 
 
 \end{document}

@@ -1,0 +1,13 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Silberman 2012]{nyu_depth_v2}
+\abntrefinfo{Silberman}{SILBERMAN}{2012}
+{SILBERMAN, N. \emph{NYU Depth Dataset V2}. 2012. \url{https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html}.
+Acessado em: data de acesso.}
+
+\end{thebibliography}
