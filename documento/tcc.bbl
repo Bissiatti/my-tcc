@@ -1,13 +1,322 @@
-\providecommand{\abntreprintinfo}[1]{%
- \citeonline{#1}}
-\setlength{\labelsep}{0pt}\begin{thebibliography}{}
-\providecommand{\abntrefinfo}[3]{}
-\providecommand{\abntbstabout}[1]{}
-\abntbstabout{v-1.9.7 }
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
 
-\bibitem[Silberman 2012]{nyu_depth_v2}
-\abntrefinfo{Silberman}{SILBERMAN}{2012}
-{SILBERMAN, N. \emph{NYU Depth Dataset V2}. 2012. \url{https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html}.
-Acessado em: data de acesso.}
 
-\end{thebibliography}
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{BSDS500}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=d19aeb8b8cfa243de387a3e46d05bcc6}{%
+           family={Arbelaez},
+           familyi={A\bibinitperiod},
+           given={Pablo},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d980bc6930f008a0fb5fa667785f2309}{%
+           family={Maire},
+           familyi={M\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1550820d5f191534290531c76de235aa}{%
+           family={Fowlkes},
+           familyi={F\bibinitperiod},
+           given={Charless},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c75a5377b6dc5213831576e88ffe553c}{%
+           family={Malik},
+           familyi={M\bibinitperiod},
+           given={Jitendra},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5755d523f37c7b5b09c8481e8a9e212c}
+      \strng{fullhash}{d3b96f811d57c254f7c28bdee0af926c}
+      \strng{bibnamehash}{5755d523f37c7b5b09c8481e8a9e212c}
+      \strng{authorbibnamehash}{5755d523f37c7b5b09c8481e8a9e212c}
+      \strng{authornamehash}{5755d523f37c7b5b09c8481e8a9e212c}
+      \strng{authorfullhash}{d3b96f811d57c254f7c28bdee0af926c}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+      \field{number}{5}
+      \field{title}{Contour Detection and Hierarchical Image Segmentation}
+      \field{volume}{33}
+      \field{year}{2011}
+      \field{pages}{898\bibrangedash 916}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1109/TPAMI.2010.161
+      \endverb
+    \endentry
+    \entry{bishop2016pattern}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1926457ebcacd352693574a2d8d484ce}{%
+           family={Bishop},
+           familyi={B\bibinitperiod},
+           given={C.M.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer New York}%
+      }
+      \strng{namehash}{1926457ebcacd352693574a2d8d484ce}
+      \strng{fullhash}{1926457ebcacd352693574a2d8d484ce}
+      \strng{bibnamehash}{1926457ebcacd352693574a2d8d484ce}
+      \strng{authorbibnamehash}{1926457ebcacd352693574a2d8d484ce}
+      \strng{authornamehash}{1926457ebcacd352693574a2d8d484ce}
+      \strng{authorfullhash}{1926457ebcacd352693574a2d8d484ce}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9781493938438}
+      \field{series}{Information Science and Statistics}
+      \field{title}{Pattern Recognition and Machine Learning}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf
+      \endverb
+    \endentry
+    \entry{opencv_library}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=42af28f239d9ce2a4d0f9a032741150e}{%
+           family={Corporation},
+           familyi={C\bibinitperiod},
+           given={Intel},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{42af28f239d9ce2a4d0f9a032741150e}
+      \strng{fullhash}{42af28f239d9ce2a4d0f9a032741150e}
+      \strng{bibnamehash}{42af28f239d9ce2a4d0f9a032741150e}
+      \strng{authorbibnamehash}{42af28f239d9ce2a4d0f9a032741150e}
+      \strng{authornamehash}{42af28f239d9ce2a4d0f9a032741150e}
+      \strng{authorfullhash}{42af28f239d9ce2a4d0f9a032741150e}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://opencv.org/}}
+      \field{title}{Open Source Computer Vision Library}
+      \field{year}{2023}
+    \endentry
+    \entry{nyu_depth_v2}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=f19e2a99ad9edfa217542eeff292dbe3}{%
+           family={Couprie},
+           familyi={C\bibinitperiod},
+           given={Camille},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=52324c670647c3f5c981f4b7fc2efbda}{%
+           family={Farabet},
+           familyi={F\bibinitperiod},
+           given={Clément},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b58b782806ec15222ca08732b16dd6e4}{%
+           family={Najman},
+           familyi={N\bibinitperiod},
+           given={Laurent},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
+           family={LeCun},
+           familyi={L\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9eded07f57244c5da9977b825c31ffae}
+      \strng{fullhash}{5a0db6bbb0707240abae0f0d6c77dad5}
+      \strng{bibnamehash}{9eded07f57244c5da9977b825c31ffae}
+      \strng{authorbibnamehash}{9eded07f57244c5da9977b825c31ffae}
+      \strng{authornamehash}{9eded07f57244c5da9977b825c31ffae}
+      \strng{authorfullhash}{5a0db6bbb0707240abae0f0d6c77dad5}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1301.3572}
+      \field{title}{Indoor semantic segmentation using depth information}
+      \field{year}{2013}
+    \endentry
+    \entry{Goodfellow-et-al-2016}{book}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=5d2585c11210cf1d4512e6e0a03ec315}{%
+           family={Goodfellow},
+           familyi={G\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ccec1ccd2e1aa86960eb2e872c6b7020}{%
+           family={Courville},
+           familyi={C\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{fullhash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{bibnamehash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{authorbibnamehash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{authornamehash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{authorfullhash}{3ae53fe582e8a815b118d26947eaa326}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{http://www.deeplearningbook.org}}
+      \field{title}{Deep Learning}
+      \field{year}{2016}
+    \endentry
+    \entry{shrivakshan2012comparison}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=37706e7da24bb7aaa72d9e7eda5357ae}{%
+           family={Shrivakshan},
+           familyi={S\bibinitperiod},
+           given={GT},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=be460963209854ca00f3815b2a9102ed}{%
+           family={Chandrasekar},
+           familyi={C\bibinitperiod},
+           given={Chandramouli},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Citeseer}%
+      }
+      \strng{namehash}{bc3230281b31953186f1622b450c5217}
+      \strng{fullhash}{bc3230281b31953186f1622b450c5217}
+      \strng{bibnamehash}{bc3230281b31953186f1622b450c5217}
+      \strng{authorbibnamehash}{bc3230281b31953186f1622b450c5217}
+      \strng{authornamehash}{bc3230281b31953186f1622b450c5217}
+      \strng{authorfullhash}{bc3230281b31953186f1622b450c5217}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Computer Science Issues (IJCSI)}
+      \field{number}{5}
+      \field{title}{A comparison of various edge detection techniques used in image processing}
+      \field{volume}{9}
+      \field{year}{2012}
+      \field{pages}{269}
+      \range{pages}{1}
+    \endentry
+    \entry{VGG16}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=9d16b7284df92c9adaee86c37ab992df}{%
+           family={Simonyan},
+           familyi={S\bibinitperiod},
+           given={Karen},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c72fc39e94030f67717052309266a44d}{%
+           family={Zisserman},
+           familyi={Z\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{25d2f3c4577a6632d37f0126cc781232}
+      \strng{fullhash}{25d2f3c4577a6632d37f0126cc781232}
+      \strng{bibnamehash}{25d2f3c4577a6632d37f0126cc781232}
+      \strng{authorbibnamehash}{25d2f3c4577a6632d37f0126cc781232}
+      \strng{authornamehash}{25d2f3c4577a6632d37f0126cc781232}
+      \strng{authorfullhash}{25d2f3c4577a6632d37f0126cc781232}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1409.1556}
+      \field{title}{Very Deep Convolutional Networks for Large-Scale Image Recognition}
+      \field{year}{2014}
+    \endentry
+    \entry{xie2015holisticallynested}{misc}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=843b6293b24d49cdfdcda48e1ccd7eb3}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={Saining},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4744828ab0e3408b2e6fc8320f7bda86}{%
+           family={Tu},
+           familyi={T\bibinitperiod},
+           given={Zhuowen},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b25fb2a1e174a5d0f80db6ca69f5052e}
+      \strng{fullhash}{b25fb2a1e174a5d0f80db6ca69f5052e}
+      \strng{bibnamehash}{b25fb2a1e174a5d0f80db6ca69f5052e}
+      \strng{authorbibnamehash}{b25fb2a1e174a5d0f80db6ca69f5052e}
+      \strng{authornamehash}{b25fb2a1e174a5d0f80db6ca69f5052e}
+      \strng{authorfullhash}{b25fb2a1e174a5d0f80db6ca69f5052e}
+      \field{sortinit}{X}
+      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CV}
+      \field{eprinttype}{arXiv}
+      \field{title}{Holistically-Nested Edge Detection}
+      \field{year}{2015}
+      \verb{eprint}
+      \verb 1504.06375
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
