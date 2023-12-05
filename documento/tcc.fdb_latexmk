@@ -1,15 +1,16 @@
 # Fdb version 4
-["biber tcc"] 1699127487 "tcc.bcf" "tcc.bbl" "tcc" 1699127817 0
-  "./refs.bib" 1699118850 2400 194966629c606aa88668e171b6e41c03 ""
-  "tcc.bcf" 1699127815 113223 8c1892b7d1dff2660880a6b363268736 "pdflatex"
+["biber tcc"] 1701798400 "tcc.bcf" "tcc.bbl" "tcc" 1701799016 0
+  "./refs.bib" 1701796736 5290 eeef8958b3d2a503f64caa77fe845a91 ""
+  "tcc.bcf" 1701799016 114115 909fe3aa462c77a097bb027d9c61678c "pdflatex"
   (generated)
   "tcc.bbl"
   "tcc.blg"
   (rewritten before read)
-["pdflatex"] 1699127809 "c:/Users/emanu/OneDrive/Documentos/fgv/tcc/my-tcc/documento/tcc.tex" "tcc.pdf" "tcc" 1699127817 0
+["pdflatex"] 1701799012 "c:/Users/emanu/OneDrive/Documentos/fgv/tcc/my-tcc/documento/tcc.tex" "tcc.pdf" "tcc" 1701799016 0
   "bib_hed.pdf" 1699119596 1327965 1e0610b4a175baf6f54d2d7449708cfe ""
   "bib_sub_filtro.pdf" 1698246487 1675463 148bf422a1522882e67039a669a773ee ""
-  "c:/Users/emanu/OneDrive/Documentos/fgv/tcc/my-tcc/documento/tcc.tex" 1699127811 17131 7ada6ae4e17c516c5aad321b0a370434 ""
+  "blur.pdf" 1701795814 672175 c45c5797fa9b51b87ffe10a23f991f6c ""
+  "c:/Users/emanu/OneDrive/Documentos/fgv/tcc/my-tcc/documento/tcc.tex" 1701799011 25309 c8e75b1961640a0836bb3db4f47a5508 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1691935454 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1691933485 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1691933485 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -128,12 +129,14 @@
   "c:/texlive/2023/texmf.cnf" 1691941086 713 e69b156964470283e0530f5060668171 ""
   "conv.png" 1699053848 44073 3c080b7616c4ad7d4ee3a4ef5ccab095 ""
   "exemple_edge.pdf" 1699120134 879940 68d4e51a50082aa30714aad97dbf9c25 ""
+  "houghP.pdf" 1701797993 4277992 ccf8b2ea1343f07111e79a1916f8910d ""
+  "morf.pdf" 1701795841 573225 85585156f243262eb5886b7e972c0936 ""
   "sobel.png" 1698194133 787454 02d7e4a9086ba107fc53ca7d44dc5ebf ""
-  "tcc.aux" 1699127815 4011 507061eb77b7b090fa92b3444fc2efca "pdflatex"
-  "tcc.bbl" 1699127498 12853 8f7b27bf1a06c9fedfcb07fe849c814e "biber tcc"
-  "tcc.out" 1699127815 1914 6ca6b26b76d658a20eae6b4aa5043c3d "pdflatex"
-  "tcc.run.xml" 1699127815 2430 a399f348682a5967e03f41813e6a5872 "pdflatex"
-  "tcc.tex" 1699127811 17131 7ada6ae4e17c516c5aad321b0a370434 ""
+  "tcc.aux" 1701799016 8198 04ee85a057c586ff960a1efc9191ae22 "pdflatex"
+  "tcc.bbl" 1701798403 26091 a0bd65b0f108e15b0c56e44a4b080ccb "biber tcc"
+  "tcc.out" 1701799016 2387 1d50ddfaef8d99dece7972f47a15c5ea "pdflatex"
+  "tcc.run.xml" 1701799016 2430 a399f348682a5967e03f41813e6a5872 "pdflatex"
+  "tcc.tex" 1701799011 25309 c8e75b1961640a0836bb3db4f47a5508 ""
   (generated)
   "tcc.aux"
   "tcc.bcf"

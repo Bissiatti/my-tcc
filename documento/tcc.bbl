@@ -104,31 +104,6 @@
       \verb https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf
       \endverb
     \endentry
-    \entry{opencv_library}{misc}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=42af28f239d9ce2a4d0f9a032741150e}{%
-           family={Corporation},
-           familyi={C\bibinitperiod},
-           given={Intel},
-           giveni={I\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{42af28f239d9ce2a4d0f9a032741150e}
-      \strng{fullhash}{42af28f239d9ce2a4d0f9a032741150e}
-      \strng{bibnamehash}{42af28f239d9ce2a4d0f9a032741150e}
-      \strng{authorbibnamehash}{42af28f239d9ce2a4d0f9a032741150e}
-      \strng{authornamehash}{42af28f239d9ce2a4d0f9a032741150e}
-      \strng{authorfullhash}{42af28f239d9ce2a4d0f9a032741150e}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://opencv.org/}}
-      \field{title}{Open Source Computer Vision Library}
-      \field{year}{2023}
-    \endentry
     \entry{nyu_depth_v2}{article}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=f19e2a99ad9edfa217542eeff292dbe3}{%
@@ -172,6 +147,89 @@
       \field{title}{Indoor semantic segmentation using depth information}
       \field{year}{2013}
     \endentry
+    \entry{Ferranti2021}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9536e3e50ab8314908ba61816207fbaf}{%
+           family={Ferranti},
+           familyi={F\bibinitperiod},
+           given={Tomás},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {FGV EMAp - Escola de Matemática Aplicada}%
+      }
+      \strng{namehash}{9536e3e50ab8314908ba61816207fbaf}
+      \strng{fullhash}{9536e3e50ab8314908ba61816207fbaf}
+      \strng{bibnamehash}{9536e3e50ab8314908ba61816207fbaf}
+      \strng{authorbibnamehash}{9536e3e50ab8314908ba61816207fbaf}
+      \strng{authornamehash}{9536e3e50ab8314908ba61816207fbaf}
+      \strng{authorfullhash}{9536e3e50ab8314908ba61816207fbaf}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Trabalho de conclusão de curso}
+      \field{note}{Acessado em 21 de novembro de 2023}
+      \field{title}{Single image 3D building reconstruction using adjacent rectangles parallel to an axis}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://hdl.handle.net/10438/33214
+      \endverb
+      \verb{url}
+      \verb https://hdl.handle.net/10438/33214
+      \endverb
+    \endentry
+    \entry{HIPR2}{misc}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=e17b1d5eccf9f527de70423f6851a51b}{%
+           family={Fisher},
+           familyi={F\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d251f91ef7e4cf0881b75ebd5f709bf9}{%
+           family={Perkins},
+           familyi={P\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1ba89e47259f6d8e4035368103e8f89a}{%
+           family={Walker},
+           familyi={W\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d9dcd85bd935b50f2e9cb20a4b704374}{%
+           family={Wolfart},
+           familyi={W\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8da7aec0c60cc38c9bb073dbd8020a21}
+      \strng{fullhash}{b58a0638370052e99b1eb114e5ee5e0c}
+      \strng{bibnamehash}{8da7aec0c60cc38c9bb073dbd8020a21}
+      \strng{authorbibnamehash}{8da7aec0c60cc38c9bb073dbd8020a21}
+      \strng{authornamehash}{8da7aec0c60cc38c9bb073dbd8020a21}
+      \strng{authorfullhash}{b58a0638370052e99b1eb114e5ee5e0c}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Morphology}
+      \field{year}{2003}
+      \verb{urlraw}
+      \verb https://homepages.inf.ed.ac.uk/rbf/HIPR2/morops.htm
+      \endverb
+      \verb{url}
+      \verb https://homepages.inf.ed.ac.uk/rbf/HIPR2/morops.htm
+      \endverb
+    \endentry
     \entry{Goodfellow-et-al-2016}{book}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=5d2585c11210cf1d4512e6e0a03ec315}{%
@@ -211,6 +269,270 @@
       \field{note}{\url{http://www.deeplearningbook.org}}
       \field{title}{Deep Learning}
       \field{year}{2016}
+    \endentry
+    \entry{Hartley2004}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=a0cea72f57464ff654a3f8362e58503d}{%
+           family={Hartley},
+           familyi={H\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c72fc39e94030f67717052309266a44d}{%
+           family={Zisserman},
+           familyi={Z\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{0e3dfde06144cdf8ac37a2746457797e}
+      \strng{fullhash}{0e3dfde06144cdf8ac37a2746457797e}
+      \strng{bibnamehash}{0e3dfde06144cdf8ac37a2746457797e}
+      \strng{authorbibnamehash}{0e3dfde06144cdf8ac37a2746457797e}
+      \strng{authornamehash}{0e3dfde06144cdf8ac37a2746457797e}
+      \strng{authorfullhash}{0e3dfde06144cdf8ac37a2746457797e}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd}
+      \field{isbn}{0521540518}
+      \field{title}{Multiple View Geometry in Computer Vision}
+      \field{year}{2004}
+      \verb{urlraw}
+      \verb https://www.cambridge.org/core/books/multiple-view-geometry-in-computer-vision/0B6F289C78B2B23F596CAA76D3D43F7A
+      \endverb
+      \verb{url}
+      \verb https://www.cambridge.org/core/books/multiple-view-geometry-in-computer-vision/0B6F289C78B2B23F596CAA76D3D43F7A
+      \endverb
+    \endentry
+    \entry{illingworth1988survey}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=aedfb347e290df1e434f687b155df987}{%
+           family={Illingworth},
+           familyi={I\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9dd3a56c94774f5880ca7475fdc308ea}{%
+           family={Kittler},
+           familyi={K\bibinitperiod},
+           given={Josef},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{d20ec5099eec35bda83e44fe0c4d73d2}
+      \strng{fullhash}{d20ec5099eec35bda83e44fe0c4d73d2}
+      \strng{bibnamehash}{d20ec5099eec35bda83e44fe0c4d73d2}
+      \strng{authorbibnamehash}{d20ec5099eec35bda83e44fe0c4d73d2}
+      \strng{authornamehash}{d20ec5099eec35bda83e44fe0c4d73d2}
+      \strng{authorfullhash}{d20ec5099eec35bda83e44fe0c4d73d2}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer vision, graphics, and image processing}
+      \field{number}{1}
+      \field{title}{A survey of the Hough transform}
+      \field{volume}{44}
+      \field{year}{1988}
+      \field{pages}{87\bibrangedash 116}
+      \range{pages}{30}
+    \endentry
+    \entry{imagineRio}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=84a23f675edda30d8c923a3a75912a7e}{%
+           family={imagineRio},
+           familyi={i\bibinitperiod}}}%
+      }
+      \strng{namehash}{84a23f675edda30d8c923a3a75912a7e}
+      \strng{fullhash}{84a23f675edda30d8c923a3a75912a7e}
+      \strng{bibnamehash}{84a23f675edda30d8c923a3a75912a7e}
+      \strng{authorbibnamehash}{84a23f675edda30d8c923a3a75912a7e}
+      \strng{authornamehash}{84a23f675edda30d8c923a3a75912a7e}
+      \strng{authorfullhash}{84a23f675edda30d8c923a3a75912a7e}
+      \field{sortinit}{i}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Instituto Moreira Salles}
+      \field{note}{Acessado em 21 de novembro de 2023}
+      \field{title}{Situated Views of Rio de Janeiro}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.imaginerio.org/pt
+      \endverb
+      \verb{url}
+      \verb https://www.imaginerio.org/pt
+      \endverb
+    \endentry
+    \entry{opencv_manual}{manual}{}
+      \list{organization}{1}{%
+        {Itseez}%
+      }
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{title}{The OpenCV Reference Manual}
+      \field{year}{2014}
+    \endentry
+    \entry{opencv_library}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9df083c94429647164640b76c66eb181}{%
+           family={Itseez},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{9df083c94429647164640b76c66eb181}
+      \strng{fullhash}{9df083c94429647164640b76c66eb181}
+      \strng{bibnamehash}{9df083c94429647164640b76c66eb181}
+      \strng{authorbibnamehash}{9df083c94429647164640b76c66eb181}
+      \strng{authornamehash}{9df083c94429647164640b76c66eb181}
+      \strng{authorfullhash}{9df083c94429647164640b76c66eb181}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/itseez/opencv}}
+      \field{title}{Open Source Computer Vision Library}
+      \field{year}{2015}
+    \endentry
+    \entry{matas2000robust}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=7df17ebc3cfb4cf295bff60b579d5638}{%
+           family={Matas},
+           familyi={M\bibinitperiod},
+           given={Jiri},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bb6e0df7526b240fed748dfb0df44d70}{%
+           family={Galambos},
+           familyi={G\bibinitperiod},
+           given={Charles},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9dd3a56c94774f5880ca7475fdc308ea}{%
+           family={Kittler},
+           familyi={K\bibinitperiod},
+           given={Josef},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{166d0996130fa0133fce67b6151b7bc4}
+      \strng{fullhash}{166d0996130fa0133fce67b6151b7bc4}
+      \strng{bibnamehash}{166d0996130fa0133fce67b6151b7bc4}
+      \strng{authorbibnamehash}{166d0996130fa0133fce67b6151b7bc4}
+      \strng{authornamehash}{166d0996130fa0133fce67b6151b7bc4}
+      \strng{authorfullhash}{166d0996130fa0133fce67b6151b7bc4}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Comput. Vis. Image Underst.}
+      \field{title}{Robust Detection of Lines Using the Progressive Probabilistic Hough Transform}
+      \field{volume}{78}
+      \field{year}{2000}
+      \field{pages}{119\bibrangedash 137}
+      \range{pages}{19}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:35118732
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:35118732
+      \endverb
+    \endentry
+    \entry{opencv_hough}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5bd4c87976f48e6a53919d53e14025e9}{%
+           family={OpenCV},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{5bd4c87976f48e6a53919d53e14025e9}
+      \strng{fullhash}{5bd4c87976f48e6a53919d53e14025e9}
+      \strng{bibnamehash}{5bd4c87976f48e6a53919d53e14025e9}
+      \strng{authorbibnamehash}{5bd4c87976f48e6a53919d53e14025e9}
+      \strng{authornamehash}{5bd4c87976f48e6a53919d53e14025e9}
+      \strng{authorfullhash}{5bd4c87976f48e6a53919d53e14025e9}
+      \field{extraname}{1}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://docs.opencv.org/3.4/d9/db0/tutorial_hough_lines.html}}
+      \field{title}{Hough Line Transform}
+      \field{year}{2023}
+    \endentry
+    \entry{opencv_morphology}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5bd4c87976f48e6a53919d53e14025e9}{%
+           family={OpenCV},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{5bd4c87976f48e6a53919d53e14025e9}
+      \strng{fullhash}{5bd4c87976f48e6a53919d53e14025e9}
+      \strng{bibnamehash}{5bd4c87976f48e6a53919d53e14025e9}
+      \strng{authorbibnamehash}{5bd4c87976f48e6a53919d53e14025e9}
+      \strng{authornamehash}{5bd4c87976f48e6a53919d53e14025e9}
+      \strng{authorfullhash}{5bd4c87976f48e6a53919d53e14025e9}
+      \field{extraname}{2}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://docs.opencv.org/3.4/d9/d61/tutorial_py_morphological_ops.html}}
+      \field{title}{Morphological Transformations}
+      \field{year}{2023}
+    \endentry
+    \entry{opencv_blur}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5bd4c87976f48e6a53919d53e14025e9}{%
+           family={OpenCV},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{5bd4c87976f48e6a53919d53e14025e9}
+      \strng{fullhash}{5bd4c87976f48e6a53919d53e14025e9}
+      \strng{bibnamehash}{5bd4c87976f48e6a53919d53e14025e9}
+      \strng{authorbibnamehash}{5bd4c87976f48e6a53919d53e14025e9}
+      \strng{authornamehash}{5bd4c87976f48e6a53919d53e14025e9}
+      \strng{authorfullhash}{5bd4c87976f48e6a53919d53e14025e9}
+      \field{extraname}{3}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradate}{3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://docs.opencv.org/3.4/dc/dd3/tutorial_gausian_median_blur_bilateral_filter.html}}
+      \field{title}{Smoothing Images}
+      \field{year}{2023}
     \endentry
     \entry{shrivakshan2012comparison}{article}{}
       \name{author}{2}{}{%

@@ -1,0 +1,8 @@
+% Os filtros morfológicos são operadores que atuam em imagens binárias, ou seja, imagens que possuem apenas dois valores de intensidade, preto e branco. Esses filtros são baseados na teoria dos conjuntos e são utilizados para remover ruídos e para destacar as características de interesse da imagem. Os filtros morfológicos mais comuns são a erosão e a dilatação. A erosão remove os pixels brancos que estão próximos aos pixels pretos, ou seja, ela remove os pixels brancos que estão próximos as arestas. A dilatação adiciona pixels brancos próximos aos pixels brancos, ou seja, ela adiciona pixels brancos próximos as arestas. A figura \ref{fig:morf} mostra a imagem original e o resultado da aplicação da erosão e da dilatação. Outro filtro morfológico que foi utilizado foi o fechamento, que é a composição da erosão com a dilatação, ou seja, a erosão é aplicada primeiro e depois a dilatação. O fechamento remove os buracos dentro das arestas e preenche as arestas quebradas. A figura \ref{fig:morf} mostra a imagem original e o resultado da aplicação do fechamento.
+
+% \begin{figure}
+% \centering
+% \includegraphics[scale=0.30]{morf.pdf}
+% \caption{Imagem original e resultado da aplicação dos filtros morfológicos.}
+% \label{fig:morf}
+% \end{figure}

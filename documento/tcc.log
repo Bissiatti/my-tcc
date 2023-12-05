@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.13)  4 NOV 2023 16:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.13)  5 DEC 2023 14:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -716,72 +716,134 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.116 \newpage
-               [1] [2]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 193.
+               [1] [2] [3]
+<sobel.png, id=90, 547.0839pt x 364.2408pt>
+File: sobel.png Graphic file (type png)
+<use sobel.png>
+Package pdftex.def Info: sobel.png  used on input line 206.
+(pdftex.def)             Requested size: 382.9561pt x 254.96683pt.
+ [4] [5
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.216 
+       <./sobel.png>]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 219.
  (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 193.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 219.
  (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<sobel.png, id=65, 547.0839pt x 364.2408pt>
-File: sobel.png Graphic file (type png)
-<use sobel.png>
-Package pdftex.def Info: sobel.png  used on input line 205.
-(pdftex.def)             Requested size: 382.9561pt x 254.96683pt.
- [3] [4 <./sobel.png>]
-Overfull \hbox (5.88896pt too wide) in paragraph at lines 220--221
+Overfull \hbox (5.88896pt too wide) in paragraph at lines 219--220
 \OT1/cmr/m/n/12 As re-des neu-rais ([][][]BISHOP[][], [][]2016[][]) s~ao uma com-bina^^Xc~ao de fun^^Xc~oes ma-tem^^Saticas
  []
 
-[5]
-<conv.png, id=98, 728.7225pt x 214.8025pt>
+[6]
+<conv.png, id=122, 728.7225pt x 214.8025pt>
 File: conv.png Graphic file (type png)
 <use conv.png>
-Package pdftex.def Info: conv.png  used on input line 227.
+Package pdftex.def Info: conv.png  used on input line 226.
 (pdftex.def)             Requested size: 327.92209pt x 96.66022pt.
- [6 <./conv.png>]
-<bib_hed.pdf, id=112, 462.52798pt x 165.44223pt>
+ [7
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.235 
+       <./conv.png>]
+<bib_hed.pdf, id=135, 462.52798pt x 165.44223pt>
 File: bib_hed.pdf Graphic file (type pdf)
 <use bib_hed.pdf>
-Package pdftex.def Info: bib_hed.pdf  used on input line 243.
+Package pdftex.def Info: bib_hed.pdf  used on input line 240.
 (pdftex.def)             Requested size: 346.89513pt x 124.08136pt.
- [7 <./bib_hed.pdf>]
-<bib_sub_filtro.pdf, id=143, 574.54652pt x 272.40028pt>
+ [8
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.249 
+       <./bib_hed.pdf>]
+<bib_sub_filtro.pdf, id=169, 574.54652pt x 272.40028pt>
 File: bib_sub_filtro.pdf Graphic file (type pdf)
 <use bib_sub_filtro.pdf>
-Package pdftex.def Info: bib_sub_filtro.pdf  used on input line 258.
+Package pdftex.def Info: bib_sub_filtro.pdf  used on input line 253.
 (pdftex.def)             Requested size: 344.73058pt x 163.4414pt.
-<exemple_edge.pdf, id=145, 574.54652pt x 194.0302pt>
+<exemple_edge.pdf, id=171, 574.54652pt x 194.0302pt>
 File: exemple_edge.pdf Graphic file (type pdf)
 <use exemple_edge.pdf>
-Package pdftex.def Info: exemple_edge.pdf  used on input line 269.
+Package pdftex.def Info: exemple_edge.pdf  used on input line 262.
 (pdftex.def)             Requested size: 344.73058pt x 116.419pt.
- [8 <./exemple_edge.pdf> <./bib_sub_filtro.pdf>] [9] [10] (./tcc.aux)
+ [9
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.270 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.270 
+       <./exemple_edge.pdf> <./bib_sub_filtro.pdf>] [10]
+<morf.pdf, id=235, 547.56505pt x 363.52313pt>
+File: morf.pdf Graphic file (type pdf)
+<use morf.pdf>
+Package pdftex.def Info: morf.pdf  used on input line 281.
+(pdftex.def)             Requested size: 328.54156pt x 218.11555pt.
+ [11
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.291 
+       <./morf.pdf>]
+<blur.pdf, id=278, 574.54652pt x 321.59962pt>
+File: blur.pdf Graphic file (type pdf)
+<use blur.pdf>
+Package pdftex.def Info: blur.pdf  used on input line 294.
+(pdftex.def)             Requested size: 344.73058pt x 192.96126pt.
+<houghP.pdf, id=286, 574.54652pt x 321.59962pt>
+File: houghP.pdf Graphic file (type pdf)
+<use houghP.pdf>
+Package pdftex.def Info: houghP.pdf  used on input line 308.
+(pdftex.def)             Requested size: 574.54512pt x 321.59883pt.
+
+Overfull \hbox (184.54512pt too wide) in paragraph at lines 308--309
+ [][] 
+ []
+
+[12
+pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.315 \subsection
+                 {Detecção de segmentos a partir de pontos} <./blur.pdf>] [13
+pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.315 \subsection
+                 {Detecção de segmentos a partir de pontos} <./houghP.pdf>] [14] [15] [16] (./tcc.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `tcc.out' has not changed.
-(rerunfilecheck)             Checksum: 6CA6B26B76D658A20EAE6B4AA5043C3D;1914.
+(rerunfilecheck)             Checksum: 1D50DDFAEF8D99DECE7972F47A15C5EA;2387.
 Package logreq Info: Writing requests to 'tcc.run.xml'.
 \openout1 = `tcc.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20033 strings out of 475188
- 346274 string characters out of 5767814
- 1929248 words of memory out of 5000000
- 41039 multiletter control sequences out of 15000+600000
+ 20145 strings out of 475188
+ 348758 string characters out of 5767814
+ 1936248 words of memory out of 5000000
+ 41128 multiletter control sequences out of 15000+600000
  564708 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,7n,95p,1432b,4319s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,7n,95p,1658b,4319s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on tcc.pdf (11 pages, 4695887 bytes).
+Output written on tcc.pdf (17 pages, 10232394 bytes).
 PDF statistics:
- 247 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 114 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 453 PDF objects out of 1000 (max. 8388607)
+ 292 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 500000)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
 

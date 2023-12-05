@@ -180,17 +180,18 @@ monografia que refere-se ao plano de trabalho a ser executado para continuidade 
 % xx
 
 \newpage
-\section{Metodologia}
 
-O problema de dado uma imagem, classificar os seguimentos de reta de acordo com o respectivo ponto de fuga que passa por essa aresta. Para resolver isso, o problema foi subdividido em três etapas:
+\section{Introdução}
 
-\begin{enumerate}
-\item Detecção de arestas
-\item Detecção de retas
-\item Classificação de seguimentos
-\end{enumerate}
+O acervo de fotografias históricas ImagineRio \cite{imagineRio}, ajuda a visualizar a evolução da cidade do Rio de Janeiro ao longo do tempo. Entretanto, esse retrato da cidade é limitado: as fotografias são escassas, um mesmo edifício possui poucas amostras de fotografias em um mesmo período de tempo e as fotografias não são apenas uma projeção bidimensional da realidade no sensor da câmera \cite{Hartley2004}. O trabalho do Tomás Ferranti \cite{Ferranti2021} apresenta uma ferramenta para que dado uma fotografia de um edifício e a seleção manual das arestas que compõem esse edifício classificadas por direção, seja possível reconstruir tridimensionalmente a fachada desse edifício. Esse trabalho busca automatizar este processo, dado apenas uma imagem de um edifício, por meio de técnicas de visão computacional e aprendizado profundo de máquina seja possível selecionar automaticamente as arestas que compõem esse edifício e classificá-las por direção. Por fim, será proposto uma integrar essa ferramenta ao trabalho do Tomás Ferranti \cite{Ferranti2021} para que seja possível reconstruir as fachadas de um edifício a partir de uma única fotografia.
 
-Cada etapa posterior depende da etapa anterior, sendo assim, a saída da etapa $i$ é a entrada da etapa $i+1$. A seguir, cada etapa será detalhada.
+
+Para resolver esse problema, esse trabalho computacional foi subdividido em três problemas menores em que cada problema depende da solução do problema anterior. A \textbf{primeira etapa} corresponde a técnicas de detecção de arestas em imagens, na qual o objetivo é classificar cada pixel da imagem em aresta ou não aresta. A \textbf{segunda etapa} corresponde às técnicas de detecção de segmentos de retas, na qual o objetivo é identificar as equações dos segmentos de retas que compõem as arestas da imagem. Por fim, a \textbf{terceira etapa} corresponde às técnicas de classificação de segmentos de retas, na qual o objetivo é usar as propriedades matemáticas das equações das retas e classifica-las de acordo com o ponto de fuga correspondente.
+
+Por hipótese, a solução proposta nesse trabalho considera que os ângulos entre as faces do edifícios são aproximadamente retos e que suas arestas pertencem a uma reta em 3 dimensões. Essa hipótese é razoável, pois, a maioria das construções possuem faces aproximadamente retas e suas arestas pertencem a uma reta em 3 dimensões. Entretanto, essa hipótese não é válida para todos os edifícios, pois, existem alguns edifícios como o Museu de Arte Contemporânea de Niterói, planejado pelo arquiteto Oscar Niemeyer, que possuem faces curvas. O artigo \cite{Ferranti2021} também carrega essas hipóteses, sendo assim, a solução do presente artigo, que é um complemento ao trabalho do Tomás, também leva essas hipóteses em consideração.
+
+
+As três próximas seções desse trabalho discutirão as técnicas utilizadas para resolver cada um dos problemas propostos: a detecção de arestas, a detecção de segmentos de retas e a classificação de segmentos de retas. A seção INTEGRAÇÂO será dedicada a integrar a solução proposta com a ferramenta desenvolvida pelo Tomás Ferranti. Por fim, a seção CONCLUSÃO apresentará as conclusões desse trabalho e a avaliação dos resultados obtidos.
 
 \section{Detecção de arestas}
 
@@ -203,10 +204,8 @@ Os algoritmos clássicos de detecção de arestas são baseados na aplicação d
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.70]{sobel.png}
+\caption{Imagem original e resultado do algoritmo de Sobel.}
 \label{fig:sobel}
-\begin{center}
-Figura: Imagem original e resultado do algoritmo de Sobel.
-\end{center}
 \end{figure}
 
 O algoritmo de Sobel é um filtro convolucional que calcula a magnitude do gradiente da intensidade da imagem. O algoritmo de Canny é um algoritmo mais sofisticado que utiliza o algoritmo de Sobel para calcular a magnitude do gradiente da intensidade da imagem e aplica uma série de filtros para remover ruídos e destacar as arestas da imagem. Em geral o algoritmo de Canny apresenta melhores resultados que o algoritmo de Sobel, porém, o algoritmo de Canny é mais custoso computacionalmente, apesar disso, o custo computacional não é está sendo considerado nesse trabalho.
@@ -225,10 +224,8 @@ Uma rede neural convolucional \cite{Goodfellow-et-al-2016} é um conjunto de té
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{conv.png}
+\caption{exemplo de rede neural convolucional}
 \label{fig:conv}
-\begin{center}
-Figura: Rede neural convolucional.
-\end{center}
 \end{figure}
 
 
@@ -241,10 +238,8 @@ A vantagem do modelo HED em relação os modelos clássicos de detecção de are
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.75]{bib_hed.pdf}
+\caption{Imagem original e resultado do modelo HED.}
 \label{fig:hed}
-\begin{center}
-Figura: Imagem original e resultado do modelo HED.
-\end{center}
 \end{figure}
 
 
@@ -256,33 +251,70 @@ A seguir são apresentados os resultados comparativos da detecção de arestas u
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.60]{bib_sub_filtro.pdf}
+\caption{Imagem original e resultado da detecção de arestas.}
 \label{fig:arestas}
-\begin{center}
-Figura: Imagem original e resultado da detecção de arestas.
-\end{center}
 \end{figure}
 
-A figura \ref{fig:bdarestas} mostra a imagem original e o resultado da aplicação do algoritmo de Canny e do modelo HED na base de dados do ImageRio, o banco de dados motivador a esse trabalho.
+O modelo HED será utilizado no pipeline desse trabalho, e, a saída dessa etapa é uma imagem binária na qual cada pixel é classificado como aresta, pontos brancos, ou não, pontos pretos. A figura \ref{fig:bdarestas} mostra a imagem original e o resultado da aplicação do modelo HED na base de dados do ImageRio.
 
 \begin{figure}
 \centering
 \includegraphics[scale=0.60]{exemple_edge.pdf}
+\caption{Imagem original e resultado da detecção de arestas na base de dados do ImageRio.}
 \label{fig:bdarestas}
-\begin{center}
-Figura: Imagem original e resultado da detecção de arestas na base de dados do ImageRio.
-\end{center}
 \end{figure}
 
 \section{Detecção de arestas}
 
-O retorno da etapa anterior é uma imagem segmentada, onde os objetos que compõem a imagem original estão destacados enquanto as outras frequências da imagem não apresenta informação relevante. Sendo assim, nessa etapa são utilizados algoritmos tradicionais de computação gráfica
-para determinar as equações das retas que passam pelos seguimentos da imagem:
+O retorno da etapa anterior é uma imagem binária na qual cada pixel é classificado como aresta, pontos brancos, ou não, pontos pretos. Tradicionalmente, uma imagem representada como um conjunto de pontos num sistema de coordenadas cartesianas, onde cada ponto é representado por um pixel, possuiu a origem $(0,0)$ no ponto superior esquerdo da imagem e o eixo $x$ cresce para a direita e o eixo $y$ cresce para baixo. 
+
+Sendo assim, o objetivo dessa etapa é identificar as equações dos segmentos de retas que compõem as arestas da imagem. Nesta etapa dois algoritmos foram testados: a transformada de Hough e a detecção de segmentos.
+
+Antes de prosseguir pelo pipeline, foi observado que o modelo HED produz uma imagem com ruídos e que algumas arestas não são contínuas, ou seja, existem alguns pontos que não são conectados por uma aresta além de que existem arestas que são muito grossas o que pode gerar uma dupla detecção de arestas pelos algoritmos que se seguem. Para resolver esse problema, foi aplicado filtros morfológicos e filtros de suavização na imagem binária que serão discutidos na próxima subseção.
+
+\subsection{filtros morfológicos}
+
+Os filtros morfológicos \cite{HIPR2} são operadores que atuam em imagens binárias, ou seja, imagens que possuem apenas dois valores de intensidade, preto e branco. Esses filtros são baseados na teoria dos conjuntos e são utilizados para remover ruídos e para destacar as características de interesse da imagem. Os filtros morfológicos mais comuns são a erosão e a dilatação. A erosão remove os pixels brancos que estão próximos aos pixels pretos, ou seja, ela remove os pixels brancos que estão próximos as arestas. A dilatação adiciona pixels brancos próximos aos pixels brancos, ou seja, ela adiciona pixels brancos próximos as arestas. A abertura também é um filtro morfológico que é a composição da erosão com a dilatação, ou seja, a erosão é aplicada primeiro e depois a dilatação. A abertura remove os pixels brancos que estão próximos aos pixels pretos e adiciona pixels brancos próximos aos pixels brancos, ou seja, ela remove os pixels brancos que estão próximos as arestas e adiciona pixels brancos próximos as arestas. Outro filtro morfológico que foi utilizado foi o fechamento, que é a composição da erosão com a dilatação, ou seja, a erosão é aplicada primeiro e depois a dilatação. O fechamento remove os buracos dentro das arestas e preenche as arestas quebradas. A figura \ref{fig:morf} mostra a imagem original e o resultado da aplicação do fechamento e da erosão utilizado o opencv \cite{opencv_morphology} com um elemento estruturante de tamanho $(9\times9)$.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.60]{morf.pdf}
+\caption{Imagem original e resultado da aplicação dos filtros morfológicos.}
+\label{fig:morf}
+\end{figure}
+
+É possível notar que o filtro de erosão consegue reduzir a espessura das arestas e o filtro de fechamento consegue remover os buracos dentro das arestas e preencher as arestas quebradas. Entretanto, o filtro de erosão ainda deixa arestas quebradiças e o filtro de fechamento ainda deixa arestas muito grossas. Para resolver o problema das arestas quebradiças, foi aplicado um filtro de suavização na imagem binária que será discutido na próxima subseção.
+
+\subsection{Filtros de suavização}
+
+Os filtros de suavização, também conhecidos como filtros de borramento, são operadores que amenizam as transições bruscas de intensidade da imagem. Neste caso, os filtros foram utilizados para suavizar as arestas quebradiças ao borrar a imagem. Os filtros de suavização que foram utilizados nesse trabalho foram o filtro de mediana e o filtro gaussiano. O filtro da mediana substitui o valor de um pixel pela mediana dos valores dos pixels vizinhos. O filtro gaussiano substitui o valor de um pixel pela média ponderada dos valores dos pixels vizinhos. A figura \ref{fig:blur} mostra a imagem original e o resultado da aplicação do filtro de mediana e do filtro gaussiano utilizado o opencv \cite{opencv_blur} com um kernel de tamanho $(5\times5)$.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.60]{blur.pdf}
+\caption{Imagem original e resultado da aplicação dos filtros de suavização.}
+\label{fig:blur}
+\end{figure}
+
+
 
 \subsection{Transformada de Hough}
 
-A transformada de Hough é uma técnica que permite a detecção de formas geométricas em uma imagem. A técnica foi desenvolvida por Paul Hough em 1962, 
+A transformada de Hough \cite{illingworth1988survey} é um algoritmo de visão computacional que é capaz de detectar figuras geométricas em uma imagem, em especial retas. O algoritmo consiste em transformar a imagem de coordenadas cartesianas para coordenadas polares, onde cada ponto da imagem é representado por uma reta na imagem transformada. Nesse espaço, para encontrar uma reta, basta encontrar os pontos que se intersectam. Por isso, foi-se utilizado a transformada de Hough probabilística \cite{matas2000robust} que é uma versão mais eficiente da transformada de Hough. A figura \ref{fig:hough} mostra a imagem original e o resultado da aplicação da transformada de Hough probabilística utilizado o opencv \cite{opencv_hough}.
 
-\subsection{Detecção de seguimentos}
+
+\begin{figure}
+\centering
+\includegraphics{houghP.pdf}
+\caption{Imagem original e resultado da aplicação da transformada de Hough probabilística.}
+\label{fig:hough}
+\end{figure}
+
+Nota-se que a transformada de Hough probabilística consegue detectar as arestas que compõem os edifícios, entretanto, ela não consegue detectar todas as arestas e algumas arestas são detectadas mais de uma vez. Por isso, foi testado um método mais robusto que será discutido na próxima subseção: a detecção de segmentos de retas.
+
+\subsection{Detecção de segmentos a partir de pontos}
+
+Para a detecção de segmentos, foi utilizada a implementação do Line Segment Detector \cite{opencv_manual} pela biblioteca opencv \cite{opencv_library} na interface Python. O LineSegmentDetector é um algoritmo de visão computacional que é capaz de detectar segmentos de retas em uma imagem, seu algoritmo é 
 
 
 \subsection{Aprimoramento}
@@ -290,9 +322,9 @@ A transformada de Hough é uma técnica que permite a detecção de formas geom�
 Observa-se que há muito ruído em alguns traços dos objetos selecionados pelo modelo de aprendizado de máquina, para evitar isso,  
 
 
-\section{Classificação de seguimentos}
+\section{Classificação de segmentos}
 
-A saída da etapa anterior $S$ contém o conjunto de pontos que descrevem os limites de seguimentos de retas contidos na imagem
+A saída da etapa anterior $S$ contém o conjunto de pontos que descrevem os limites de segmentos de retas contidos na imagem
 
 
 
