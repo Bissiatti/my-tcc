@@ -28,7 +28,7 @@
 \newtheorem{assumption}{Assumption}
 \newtheorem{acknowledgment}{Acknowledgment}
 \newtheorem{algorithm}{Algorithm}
-\newtheorem{axiom}{Axiom}
+\newtheorem{axiom}{Axioma}
 \newtheorem{case}{Case}
 \newtheorem{claim}{Claim}
 \newtheorem{conclusion}{Conclusion} 
@@ -50,6 +50,8 @@
 \newenvironment{proof}[1][Proof]{\textbf{#1.} }{\rule{0.5em}{0.5em}}
 
 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 
 \begin{document}
 
@@ -264,7 +266,7 @@ O modelo HED será utilizado no pipeline desse trabalho, e, a saída dessa etapa
 \label{fig:bdarestas}
 \end{figure}
 
-\section{Detecção de arestas}
+\section{Detecção de segmentos de retas}
 
 O retorno da etapa anterior é uma imagem binária na qual cada pixel é classificado como aresta, pontos brancos, ou não, pontos pretos. Tradicionalmente, uma imagem representada como um conjunto de pontos num sistema de coordenadas cartesianas, onde cada ponto é representado por um pixel, possuiu a origem $(0,0)$ no ponto superior esquerdo da imagem e o eixo $x$ cresce para a direita e o eixo $y$ cresce para baixo. 
 
@@ -274,7 +276,7 @@ Antes de prosseguir pelo pipeline, foi observado que o modelo HED produz uma ima
 
 \subsection{filtros morfológicos}
 
-Os filtros morfológicos \cite{HIPR2} são operadores que atuam em imagens binárias, ou seja, imagens que possuem apenas dois valores de intensidade, preto e branco. Esses filtros são baseados na teoria dos conjuntos e são utilizados para remover ruídos e para destacar as características de interesse da imagem. Os filtros morfológicos mais comuns são a erosão e a dilatação. A erosão remove os pixels brancos que estão próximos aos pixels pretos, ou seja, ela remove os pixels brancos que estão próximos as arestas. A dilatação adiciona pixels brancos próximos aos pixels brancos, ou seja, ela adiciona pixels brancos próximos as arestas. A abertura também é um filtro morfológico que é a composição da erosão com a dilatação, ou seja, a erosão é aplicada primeiro e depois a dilatação. A abertura remove os pixels brancos que estão próximos aos pixels pretos e adiciona pixels brancos próximos aos pixels brancos, ou seja, ela remove os pixels brancos que estão próximos as arestas e adiciona pixels brancos próximos as arestas. Outro filtro morfológico que foi utilizado foi o fechamento, que é a composição da erosão com a dilatação, ou seja, a erosão é aplicada primeiro e depois a dilatação. O fechamento remove os buracos dentro das arestas e preenche as arestas quebradas. A figura \ref{fig:morf} mostra a imagem original e o resultado da aplicação do fechamento e da erosão utilizado o opencv \cite{opencv_morphology} com um elemento estruturante de tamanho $(9\times9)$.
+Os filtros morfológicos \cite{HIPR2} são operadores que atuam em imagens binárias, ou seja, imagens que possuem apenas dois valores de intensidade, preto e branco. Esses filtros são baseados na teoria dos conjuntos e são utilizados para remover ruídos e para destacar as características de interesse da imagem. Os filtros morfológicos mais comuns são a erosão e a dilatação. A erosão remove os pixels brancos que estão próximos aos pixels pretos, ou seja, ela remove os pixels brancos que estão próximos as arestas. A dilatação adiciona pixels brancos próximos aos pixels brancos, ou seja, ela adiciona pixels brancos próximos as arestas. A abertura também é um filtro morfológico que é a composição da erosão com a dilatação, ou seja, a erosão é aplicada primeiro e depois a dilatação. A abertura remove os pixels brancos que estão próximos aos pixels pretos e adiciona pixels brancos próximos aos pixels brancos, ou seja, ela remove os pixels brancos que estão próximos as arestas e adiciona pixels brancos próximos as arestas. Outro filtro morfológico utilizado foi o fechamento, que é a composição da erosão com a dilatação, ou seja, a erosão é aplicada primeiro e depois a dilatação. O fechamento remove os buracos dentro das arestas e preenche as arestas quebradas. A figura \ref{fig:morf} mostra a imagem original e o resultado da aplicação do fechamento e da erosão utilizado o opencv \cite{opencv_morphology} com um elemento estruturante de tamanho $(9\times9)$.
 
 \begin{figure}
 \centering
@@ -297,15 +299,15 @@ Os filtros de suavização, também conhecidos como filtros de borramento, são 
 \end{figure}
 
 
-
 \subsection{Transformada de Hough}
 
 A transformada de Hough \cite{illingworth1988survey} é um algoritmo de visão computacional que é capaz de detectar figuras geométricas em uma imagem, em especial retas. O algoritmo consiste em transformar a imagem de coordenadas cartesianas para coordenadas polares, onde cada ponto da imagem é representado por uma reta na imagem transformada. Nesse espaço, para encontrar uma reta, basta encontrar os pontos que se intersectam. Por isso, foi-se utilizado a transformada de Hough probabilística \cite{matas2000robust} que é uma versão mais eficiente da transformada de Hough. A figura \ref{fig:hough} mostra a imagem original e o resultado da aplicação da transformada de Hough probabilística utilizado o opencv \cite{opencv_hough}.
 
+% com parâmetros de 
 
 \begin{figure}
 \centering
-\includegraphics{houghP.pdf}
+\includegraphics[scale=0.6]{houghP.pdf}
 \caption{Imagem original e resultado da aplicação da transformada de Hough probabilística.}
 \label{fig:hough}
 \end{figure}
@@ -314,19 +316,240 @@ Nota-se que a transformada de Hough probabilística consegue detectar as arestas
 
 \subsection{Detecção de segmentos a partir de pontos}
 
-Para a detecção de segmentos, foi utilizada a implementação do Line Segment Detector \cite{opencv_manual} pela biblioteca opencv \cite{opencv_library} na interface Python. O LineSegmentDetector é um algoritmo de visão computacional que é capaz de detectar segmentos de retas em uma imagem, seu algoritmo é 
+Para a detecção de segmentos, foi utilizada a implementação do Line Segment Detector \cite{opencv_manual} pela biblioteca opencv \cite{opencv_library} na interface Python. O LineSegmentDetector é um algoritmo de visão computacional que é capaz de detectar segmentos de retas em uma imagem, seu algoritmo é baseado em uma técnica de agrupamento de pontos chamada de \textbf{Progressive Probabilistic Hough Transform (PPHT)} \cite{matas2000robust}. O O algoritmo PPHT utilizado pelo Line Segment Detector opera de forma hierárquica, refinando gradualmente o processo de detecção de linha. Ele começa analisando a imagem em baixa resolução e aumenta progressivamente a resolução, permitindo a detecção de segmentos de linha grosseiros e finos. A desvantagem é que ele detecta todos os segmentos de linha selecionados pelo HED, incluindo os ruídos, e, por isso, é necessário desconsiderar os segmentos de linha que não são relevantes para a aplicação. A figura \ref{fig:lsd} mostra a imagem original e o resultado da aplicação do Line Segment Detector:
 
-
-\subsection{Aprimoramento}
-
-Observa-se que há muito ruído em alguns traços dos objetos selecionados pelo modelo de aprendizado de máquina, para evitar isso,  
+\begin{figure}
+\centering
+\includegraphics[scale=0.60]{lsd.pdf}
+\caption{Imagem original e resultado da aplicação do Line Segment Detector.}
+\label{fig:lsd}
+\end{figure}
 
 
 \section{Classificação de segmentos}
 
-A saída da etapa anterior $S$ contém o conjunto de pontos que descrevem os limites de segmentos de retas contidos na imagem
+Nota-se que o algoritmo de detecção de segmentos de retas do opencv obteve bom resultado em relação a transformada de Hough probabilística, sendo assim, o cálculo dessa seção será baseado nos segmentos de retas deste algoritmo. Nesta seção será discutido como classificar os segmentos de retas matematicamente a partir dos pontos extremos de cada segmento. A próxima subseção discutirá as propriedades matemáticas dos pontos de fuga e como utilizar essas propriedades para classificar os segmentos de retas de forma computacionalmente eficiente.
+
+\subsection{Modelo de câmera pinhole}
+
+O modelo matemático mais simples para representar a fotografia de uma cena é o modelo de câmera pinhole. Esse modelo é baseado na projeção de perspectiva, onde os raios de luz que saem de um ponto da cena e atingem o plano da imagem são representados por retas que passam pelo centro de projeção da câmera. Esse modelo despreza as distorções óticas da lente da câmera e considera que a câmera está alinhada com o plano da imagem, ou seja, a câmera está perpendicular ao plano da imagem, esse mesmo modelo é utilizado pelo trabalho do Tomás Ferranti \cite{Ferranti2021}.
+
+Considerando esse modelo, tem-se cada ponto da cena é representado no plano projetivo por um raio de luz que passa pelo centro de projeção da câmera e atinge o plano da imagem. O plano projetivo é um plano bidimensional, um subespaço afim de dimensão 2, que contém a imagem projetada pela luz que passou pelas lentes da câmera. A principal propriedade do plano projetivo que é interessante para essa aplicação são os pontos de fuga. Os pontos de fuga são os pontos de intersecção de retas paralelas no $R^3$ que são projetadas em retas concorrentes no plano projetivo. Como axioma, todas as retas paralelas no $R^3$ se intersectam em um ponto no plano projetivo, nem que este seja no infinito. Um ponto de fuga é dito degenerado quando ele está no infinito.
+% \subsection{Axiomas do plano projetivo}
+
+% \begin{axiom}
+
+% Dados três pontos distintos $A$, $B$ e $C$ não colineares, existe uma única reta que passa por esses três pontos.
+
+% \end{axiom}
+
+% \begin{axiom}
+
+%     Os pontos de fuga são os pontos de intersecção de retas paralelas no $R^3$ que são projetadas em retas concorrentes no plano projetivo.
+
+% \end{axiom}
+
+% \begin{axiom}
+
+%     Dados dois pontos distintos $A$ e $B$, existe uma única reta que passa por esses dois pontos.
+
+% \end{axiom}
+
+% axioma de que todas as retas paralelas no $R^3$ se intersectam em um ponto no plano projetivo.
 
 
+% A figura \ref{fig:pinhole} mostra o modelo de câmera pinhole.
+
+% Uma fotografia tradicional é uma representação bidimensional da realidade. Fisicamente, o obturador controla a quantidade de luz que entre pelas lentes da câmera e, quando a luz atinge o sensor, ela é projetada no plano focal da câmera. O plano focal é um plano bidimensional que contém a imagem projetada pela luz que passou pelas lentes da câmera. Matematicamente, os objetos da cena tridimensional são projetadas no plano projetivo, que é um plano bidimensional, um subespaço afim de dimensão 2, que contém a imagem projetada pela luz que passou pelas lentes da câmera. A principal propriedade do plano projetivo que é interessante para essa aplicação são os pontos de fuga. Os pontos de fuga são os pontos de intersecção de retas paralelas no $R^3$ que são projetadas em retas concorrentes no plano projetivo. Como axioma, todas as que são retas paralelas no $R^3$ se intersectam em um ponto no plano projetivo. 
+
+\subsection{Classificação de acordo com os pontos de fuga}
+
+
+Os dados dessa aplicação são fotografias de edifícios, e, esses dados possuem algumas hipóteses que serão utilizadas para classificar os segmentos de retas. A primeira hipótese é que os edifícios possuem faces aproximadamente retas, ou seja, os segmentos de retas que compõem as arestas dos edifícios são aproximadamente retos. A segunda hipótese é que os edifícios possuem faces que são perpendiculares entre si, ou seja, os segmentos de retas que compõem as arestas dos edifícios são perpendiculares entre si. A terceira hipótese é que a câmera está externa ao edifício. A quarta hipótese é que um dos pontos de fuga é aproximadamente degenerado verticalmente, ou seja, a câmera está aproximadamente alinhada com a base do edifício. Todas as hipóteses são razoáveis considerando os dados alvo: fotografias históricas de faxadas de edifícios.
+
+Considerando a representação digitais binárias, como ocorre com a imagem de saída da etapa da etapa de detecção de arestas, a origem $(0,0)$ do plano cartesiano está no ponto superior esquerdo com o eixo $x$ crescendo para a direita e o eixo $y$ crescendo para baixo. Então, a equação da inclinação da reta que passa pelos pontos $(x_1,y_1)$ e $(x_2,y_2)$ é dada por:
+
+$$ 
+m = \frac{y_2-y_1}{x_2-x_1}
+$$
+
+Podemos obter o ângulo $\theta$ que a reta faz com o eixo $x$ por meio da função arco tangente:
+
+$$
+\theta = \arctan(m)
+$$
+
+A hipótese de que a câmera está alinhada com a base do edifício, ou seja, um dos pontos de fuga é aproximadamente degenerado verticalmente, implica que a reta que passa pelo ponto $(x_1,y_1)$ e $(x_2,y_2)$ é aproximadamente vertical, ou seja, o coeficiente angular $m$, em módulo, tende ao infinito. Sendo assim, foi definido um parâmetro $alpha$ tal que se $m > alpha$ então a reta é aproximadamente vertical e esta foi classificado com o ponto de fuga vertical de classe 0. Por padrão o parâmetro $alpha$ foi definido como $alpha=2$, arbitrariamente. Os demais seguimentos foram classificados em mais dois grupos de acordo com os pontos de fuga restantes, para essa divisão, houve a subdivisão do problema em 3 casos:
+
+\begin{enumerate}
+    \item Existe um ponto de fuga horizontal degenerado, ou seja, a câmera está aproximadamente alinhada com a lateral do edifício.
+    \item Não existe um ponto de fuga horizontal degenerado, mas, os pontos de fugas estão distantes entre si e distantes do centro da imagem.
+    \item Não existe um ponto de fuga horizontal degenerado, mas, os pontos de fugas estão próximos entre si e próximos do centro da imagem.
+\end{enumerate}
+
+\subsubsection{Ponto de fuga horizontal degenerado}
+
+A figura \ref{fig:salvador} de \cite{salvador} é um example de fotografia com o ponto de fuga horizontal degenerado. Nesse caso, a câmera está aproximadamente alinhada com a lateral do edifício, ou seja, a reta que passa pelo ponto $(x_1,y_1)$ e $(x_2,y_2)$ é aproximadamente horizontal, ou seja, o ângulo, em módulo, tende a zero. Sendo assim, foi definido um parâmetro $beta$ tal que se $\theta < beta$ então a reta é aproximadamente horizontal e esta foi classificado com o ponto de fuga horizontal degenerado de classe 1. Por padrão o parâmetro $beta$ foi definido como $beta=0.1$, arbitrariamente. Os demais seguimentos foram classificados na classe 2, que é a classe restante.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.20]{salvador.jpg}
+\caption{Exemplo de imagem com ponto de fuga horizontal degenerado.}
+\label{fig:salvador}
+\end{figure}
+
+Após aplicar o algoritmo nesse caso foi obtido o seguinte resultado na figura \ref{fig:horizontal}:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.80]{horizonte2.pdf}
+    \caption{Resultado final da classificação de segmentos de retas no caso de ponto de fuga horizontal degenerado.}
+    \label{fig:horizontal}
+    \end{figure}
+end{figure}
+
+\subsubsection{Pontos de fuga distantes}
+
+Caso os pontos de fuga estejam distantes da imagem, então, as retas originalmente paralelas, possuem uma inclinação ligeiramente diferente, pois elas irão se encontrar em um dos pontos de fuga distantes. Neste caso, como a câmera está externa ao edifício e os ângulos entre as faces do edifício são aproximadamente retos então, os ângulos dessas retas no plano projetivo são ângulos agudos por conta dos pontos de fugas estarem distantes. Sendo assim, o ângulo em relação ao eixo $x$ da reta que passa pelos pontos $(x_1,y_1)$ e $(x_2,y_2)$ foi classificado para a classe um se $\theta < 0$ e para a classe 2 se $\theta > 0$, pois, necessariamente, um dos pontos de fuga é ascendente e o outro é descendente dado que os ângulos são agudos. A figura \ref*{fig:normal} mostra um exemplo de pontos de fuga distantes classificados de acordo com essa lógica.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.80]{normal.pdf}
+    \caption{Exemplo de imagem com ponto de fuga distantes}
+    \label{fig:normal}
+\end{figure}
+
+
+\subsubsection{Pontos de fuga próximos}
+
+Por outro lado, caso os pontos de fuga estejam próximos da imagem, então, as retas originalmente paralelas, possuem uma inclinação muito diferente, pois elas irão se encontrar em um dos pontos de fuga próximos. Neste caso, como a câmera está externa ao edifício e os ângulos entre as faces do edifício são aproximadamente retos então, os ângulos dessas retas no plano projetivo são ângulos obtusos já que os pontos de fuga estão próximos. Sendo assim, os pontos de fuga se encontram com seu $y$ entre essas retas, portanto, a partir da altura $h$ do ponto de fuga, foi-se necessário inverter a classificação das retas, ou seja, o ângulo em relação ao eixo $x$ é classificado para a classe 1 se $\theta < 0$ e se $y_i < h^*$ ou se $\theta > 0$ e se $y_i > h^*$ e para a classe 2 caso contrário A figura \ref{fig:proximos} mostra um exemplo de pontos de fuga próximos classificados de acordo com essa lógica.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.60]{inverse.pdf}
+    \caption{Exemplo de imagem com ponto de fuga próximos}
+    \label{fig:proximos}
+\end{figure}
+
+\subsection{Algoritmo de classificação}
+
+Após os comentários em relação a lógica da classificação, o algoritmo de classificação é apresentado a seguir:
+
+\begin{algorithm}
+    \small \small \small \small
+    \caption{Funções auxiliares}
+    \begin{algorithmic}[1]
+    
+    \Function{calcula\_inclinacao}{pontos}
+        \State $x1, y1, x2, y2 \gets$ pontos 
+        \State $m \gets \dfrac{y2 - y1}{x2 - x1}$
+        \State \Return $m$ 
+    \EndFunction
+    
+    \Function{calcula\_angulo}{pontos=None, m=None}
+        \If{$\text{type}(m) == \text{None}$}
+            \State $m \gets \text{calcula\_inclinacao}(pontos)$
+        \EndIf
+        \State $\text{angulo} \gets \text{np.arctan}(m)$
+        \State \Return angulo
+    \EndFunction
+    
+    \Function{vetor\_inclinacao}{pontos}
+        \State func $\gets \lambda x: \text{calcula\_inclinacao}(x)$
+        \State \Return $\text{np.apply\_along\_axis}(\text{func}, 1, \text{pontos})$
+    \EndFunction
+    
+    \Function{vetor\_angulo}{pontos}
+        \State func $\gets \text{np.vectorize}(\text{calcula\_angulo})$
+        \State $m \gets \text{func}(pontos)$
+        \State \Return $m$
+    \EndFunction
+    
+    \Function{vetor\_angulo\_dado\_m}{m}
+        \State $\text{angulo} \gets \text{calcula\_angulo}(m=m)$
+        \State \Return angulo
+    \EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\begin{algorithmic}[2]
+    \small \small \small \small
+    \caption{Função principal de classificação de segmentos de retas}
+    \Function{cluster\_final}{n\_cluster=3, alpha=2, image\_path='t', image\_opencv=None, swap=False, swapPercent=0.75}
+    \If{$\text{image\_opencv} \neq \text{None}$}
+        \State lines $\gets \text{getLines}(\text{image\_opencv=image\_opencv})$
+    \Else
+        \State lines $\gets \text{getLines}(\text{image\_path})$
+    \EndIf
+    \State lines $\gets$ lines$[:,0:4]$
+    \State $m \gets \text{vetor\_inclinacao}(\text{lines})$
+    \State angulo $\gets \text{vetor\_angulo\_dado\_m}(m)$
+    \State class0, class1 $\gets \text{filtro\_inclinacao}(m, \alpha)$
+    \State class0 $\gets \text{np.array}(class0)$
+    \State class1 $\gets \text{np.array}(class1)$
+    \State labels $\gets \text{cluster\_lines\_angulo}(\text{angulo[class1]}, \text{lines[class1]}, n\_cluster, \text{swap=swap}, \text{swapPercent=swapPercent})$
+    \State allClass $\gets \text{np.zeros}([\text{lines.shape}[0]])$
+    \State allClass[class0] $\gets 0$
+    \State allClass[class1] $\gets \text{labels} + 1$
+    \State \Return allClass, lines
+\EndFunction
+
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \small \small \small \small
+\begin{algorithmic}[3]
+    \caption{Função de clusterização de segmentos de retas de acordo com o ângulo para as retas não verticais}
+
+\Function{cluster\_lines\_angulo}{angulo, lines, n\_clusters=2, beta=0.1, swap=False, swapPercent=0.75}
+    \State count $\gets 0$
+    \For{$i \gets 0$ to $\text{angulo.shape}[0]$}
+        \If{$\left|\text{angulo}[i]\right| \leq \text{beta}$}
+            \State count $\gets$ count $+ 1$
+        \EndIf
+    \EndFor
+    \State \Call{print}{$\dfrac{\text{count}}{\text{angulo.shape}[0]}$}
+    \If{$\dfrac{\text{count}}{\text{angulo.shape}[0]} > 0.25$}
+        \State values $\gets$ []
+        \For{$i \gets 0$ to $\text{angulo.shape}[0]$}
+            \If{$\left|\text{angulo}[i]\right| \leq \text{beta}$}
+                \State values.\text{append}(0)
+            \Else
+                \State values.\text{append}(1)
+            \EndIf
+        \EndFor
+        \State \Return \text{np.array}(values)
+    \EndIf
+
+    \State $h \gets \text{max}(\text{max}(\text{lines}[:,1]), \text{max}(\text{lines}[:,3]))$
+
+    \State values $\gets$ []
+    \For{$i \gets 0$ to $\text{angulo.shape}[0]$}
+        \If{$\text{angulo}[i] > 0$}
+            \If{not \text{swap}}
+                \State values.\text{append}(0)
+            \ElsIf{$\text{lines}[i,1] > h \times \text{swapPercent}$ or $\text{lines}[i,3] > h \times \text{swapPercent}$}
+                \State values.\text{append}(1)
+            \Else
+                \State values.\text{append}(0)
+            \EndIf
+        \Else
+            \If{not \text{swap}}
+                \State values.\text{append}(1)
+            \ElsIf{$\text{lines}[i,1] > h \times \text{swapPercent}$ or $\text{lines}[i,3] > h \times \text{swapPercent}$}
+                \State values.\text{append}(0)
+            \Else
+                \State values.\text{append}(1)
+            \EndIf
+        \EndIf
+    \EndFor
+    \State \Return \text{np.array}(values)
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+% Notamos que ainda sobra
 
 % \centering
 % %left bottom right top

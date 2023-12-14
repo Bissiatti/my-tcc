@@ -19,6 +19,39 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{salvador}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5fba34c70d513707d80fa176a00c98df}{%
+           family={Adamy\bibnamedelimb Gianinni\bibnamedelimb por\bibnamedelima Pixabay},
+           familyi={A\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim p\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Imagem},
+           giveni={I\bibinitperiod},
+           givenun=0,
+           prefix={de},
+           prefixi={d\bibinitperiod},
+           prefixun=0}}%
+      }
+      \strng{namehash}{5fba34c70d513707d80fa176a00c98df}
+      \strng{fullhash}{5fba34c70d513707d80fa176a00c98df}
+      \strng{bibnamehash}{5fba34c70d513707d80fa176a00c98df}
+      \strng{authorbibnamehash}{5fba34c70d513707d80fa176a00c98df}
+      \strng{authornamehash}{5fba34c70d513707d80fa176a00c98df}
+      \strng{authorfullhash}{5fba34c70d513707d80fa176a00c98df}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Centro histórico de Salvador, Bahia, Brasil}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://pixabay.com/pt/users/adamygianinni-8676966/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3323275
+      \endverb
+      \verb{url}
+      \verb https://pixabay.com/pt/users/adamygianinni-8676966/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3323275
+      \endverb
+    \endentry
     \entry{BSDS500}{article}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=d19aeb8b8cfa243de387a3e46d05bcc6}{%

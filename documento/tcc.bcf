@@ -2464,6 +2464,9 @@
     <bcf:citekey order="19" intorder="1">opencv_hough</bcf:citekey>
     <bcf:citekey order="20" intorder="1">opencv_manual</bcf:citekey>
     <bcf:citekey order="21" intorder="1">opencv_library</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">matas2000robust</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">Ferranti2021</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">salvador</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
